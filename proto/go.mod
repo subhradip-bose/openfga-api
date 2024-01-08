@@ -1,4 +1,4 @@
-module github.com/openfga/api/proto
+module github.com/subhradip-bose/openfga-api/proto
 
 go 1.21.3
 

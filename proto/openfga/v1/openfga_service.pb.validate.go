@@ -5553,6 +5553,39 @@ func (m *ListStoresRequest) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
+	if len(m.GetCurrentTenant()) > 5120 {
+		err := ListStoresRequestValidationError{
+			field:  "CurrentTenant",
+			reason: "value length must be at most 5120 bytes",
+		}
+		if !all {
+			return err
+		}
+		errors = append(errors, err)
+	}
+
+	if len(m.GetCurrentEnvironment()) > 5120 {
+		err := ListStoresRequestValidationError{
+			field:  "CurrentEnvironment",
+			reason: "value length must be at most 5120 bytes",
+		}
+		if !all {
+			return err
+		}
+		errors = append(errors, err)
+	}
+
+	if len(m.GetCurrentUser()) > 5120 {
+		err := ListStoresRequestValidationError{
+			field:  "CurrentUser",
+			reason: "value length must be at most 5120 bytes",
+		}
+		if !all {
+			return err
+		}
+		errors = append(errors, err)
+	}
+
 	if len(errors) > 0 {
 		return ListStoresRequestMultiError(errors)
 	}

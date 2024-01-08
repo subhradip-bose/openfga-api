@@ -4,7 +4,7 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/openfga/api/proto
+    default: github.com/subhradip-bose/openfga-api/proto
     except:
       - buf.build/googleapis/googleapis
       - buf.build/envoyproxy/protoc-gen-validate
